@@ -46,6 +46,11 @@ jobs:
           name: github-pages
           path: '.'
 
+      - name: List files to be uploaded
+        run: |
+          du -sh .
+          find . -type f | wc -l
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
