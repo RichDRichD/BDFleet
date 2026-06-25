@@ -21,10 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload artifact
+      - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .   # root of your static site
+          path: .  # upload ONLY the root directory
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
