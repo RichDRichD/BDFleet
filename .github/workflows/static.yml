@@ -1,5 +1,3 @@
-name: Deploy static site to GitHub Pages
-
 on:
   push:
     branches: ["main"]
@@ -21,10 +19,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload static site
+      - name: Prepare artifact
+        run: |
+          mkdir public
+          cp -r index.html style.css script.js assets public/
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .  # upload ONLY the root directory
+          path: public
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
