@@ -38,7 +38,7 @@ jobs:
         with:
          # Upload index.html and site directory
          path: |
-           index.html
+           index.htm
            site
       - name: Deploy to GitHub Pages
         id: deployment
